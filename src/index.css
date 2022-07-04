@@ -9,9 +9,18 @@
 }
 
 body {
-  box-sizing: border-box;
+	box-sizing: border-box;
 	font-size: 62.5%;
 	font-family: 'Roboto', 'Montserrat', sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+}
+
+.App-header {
+	text-align: center;
+}
+
+.listItemStyle {
+	list-style: none;
+	margin-top: 3rem;
 }

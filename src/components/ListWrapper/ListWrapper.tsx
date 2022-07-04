@@ -4,9 +4,9 @@ import ListItem from './ListItem/ListItem'
 const ListWrapper = () => {
 	return (
 		<ul>
-            <ListItem />
+			<ListItem />
 		</ul>
 	)
-};
+}
 
 export default ListWrapper
