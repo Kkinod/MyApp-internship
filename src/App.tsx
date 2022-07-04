@@ -4,6 +4,7 @@ import './App.css'
 import ListWrapper from './components/ListWrapper/ListWrapper'
 import Toolbar from './components/MaterialUI/Toolbar/Toolbar'
 
+
 function App() {
 	return (
 		<div className='App'>
@@ -11,6 +12,7 @@ function App() {
 				<Toolbar />
 			</header>
 			<ListWrapper />
+			
 		</div>
 	)
 }

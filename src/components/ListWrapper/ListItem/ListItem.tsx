@@ -1,17 +1,12 @@
 // Komponenty prywatne
 
 import React from 'react'
-import Button from '@mui/material/Button'
+import Card from '../../MaterialUI/ItemCard/ItemCard'
 
 const ListItem = () => {
 	return (
 		<li className='listItemStyle'>
-			<img src='' />
-			<div>
-				<h3>Kamil Pawelek</h3>
-				<p>Adres Email:</p>
-				<Button variant='contained' size="small">Szczegóły</Button>
-			</div>
+			<Card />
 		</li>
 	)
 }
