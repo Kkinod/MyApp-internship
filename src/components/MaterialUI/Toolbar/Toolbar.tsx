@@ -71,8 +71,8 @@ export default function SearchAppBar() {
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
-            <h1>MUI</h1>
-            <h2>abc</h2>
+            <h1>Meet ReqRes users!</h1>
+            <h2>Application created with free ReqRes API</h2>
             
           </Typography>
           <Search>
