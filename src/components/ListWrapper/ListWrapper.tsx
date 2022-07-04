@@ -2,9 +2,15 @@ import React from 'react'
 import ListItem from './ListItem/ListItem'
 
 
+
 const ListWrapper = () => {
 	return (
-		<ul>
+		<ul className='ulList'>
+			<ListItem />
+			<ListItem />
+			<ListItem />
+			<ListItem />
+			<ListItem />
 			<ListItem />
 		</ul>
 	)
