@@ -1,5 +1,3 @@
-// Komponenty prywatne
-
 import React from 'react'
 import Card from '../../MaterialUI/ItemCard/ItemCard'
 
