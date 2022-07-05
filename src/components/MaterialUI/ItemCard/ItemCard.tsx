@@ -1,13 +1,8 @@
 import * as React from 'react'
-import Card from '@mui/material/Card'
-import CardActions from '@mui/material/CardActions'
-import CardContent from '@mui/material/CardContent'
-import CardMedia from '@mui/material/CardMedia'
-import Button from '@mui/material/Button'
-import Typography from '@mui/material/Typography'
+import { Card, CardActions, CardContent, CardMedia, Button, Typography } from '@mui/material'
 import sun from '../../../assets/img/sun.png'
 
-export default function ImgMediaCard() {
+const ImgMediaCard = () => {
 	return (
 		<Card sx={{ maxWidth: 250 }}>
 			<CardMedia component='img' alt='User img' height='250' image={sun} />
@@ -27,3 +22,5 @@ export default function ImgMediaCard() {
 		</Card>
 	)
 }
+
+export default ImgMediaCard
