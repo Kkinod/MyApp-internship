@@ -7,14 +7,13 @@ import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
 import sun from '../../../assets/img/sun.png'
 
-
 export default function ImgMediaCard() {
 	return (
 		<Card sx={{ maxWidth: 250 }}>
 			<CardMedia component='img' alt='User img' height='250' image={sun} />
 			<CardContent>
 				<Typography gutterBottom variant='h5' component='div'>
-        Kamil Pawełek
+					Kamil Pawełek
 				</Typography>
 				<Typography variant='body2' color='text.secondary'>
 					Email: email@email.com
@@ -28,3 +27,4 @@ export default function ImgMediaCard() {
 		</Card>
 	)
 }
+

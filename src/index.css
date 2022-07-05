@@ -22,7 +22,12 @@ body {
 
 .ulList {
 	display: flex;
+	margin: 2rem;
 	justify-content: center;
 	flex-wrap: wrap;
 	list-style: none;
+}
+
+.liItem {
+	margin: 0.5rem;
 }

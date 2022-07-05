@@ -7,11 +7,6 @@ const ListWrapper = () => {
 	return (
 		<ul className='ulList'>
 			<ListItem />
-			<ListItem />
-			<ListItem />
-			<ListItem />
-			<ListItem />
-			<ListItem />
 		</ul>
 	)
 }

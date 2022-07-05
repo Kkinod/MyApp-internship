@@ -5,7 +5,7 @@ import Card from '../../MaterialUI/ItemCard/ItemCard'
 
 const ListItem = () => {
 	return (
-		<li >
+		<li className='liItem'>
 			<Card />
 		</li>
 	)
