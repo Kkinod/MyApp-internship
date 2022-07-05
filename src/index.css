@@ -16,10 +16,6 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 }
 
-.App-header {
-	text-align: center;
-}
-
 .ulList {
 	display: flex;
 	margin: 2rem;
