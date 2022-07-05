@@ -28,9 +28,14 @@ const ListWrapper = () => {
 	const [users, setUsers] = useState<IListItem[]>([])
 	const usersList = async () => {
 		const res = await fetch(URL)
+		if(!res.ok) {
+			const msg = `USERS NOT FOUND: ${res.status}`;
+			throw new Error(msg);
+		}
 		const json = await res.json()
 		setUsers(json.data)
 	}
+
 	useEffect(() => {
 		usersList()
 	}, [])
