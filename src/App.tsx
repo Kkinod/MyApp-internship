@@ -1,5 +1,4 @@
 import React from 'react'
-import ListWrapper from './components/ListWrapper/ListWrapper'
 import Toolbar from './components/MaterialUI/Toolbar/Toolbar'
 
 function App() {
@@ -8,9 +7,8 @@ function App() {
 			<header className='App-header'>
 				<Toolbar />
 			</header>
-			<ListWrapper />
 		</div>
 	)
 }
 
-export default App;
+export default App
