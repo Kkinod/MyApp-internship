@@ -3,19 +3,20 @@ import React from 'react'
 import { Card, CardActions, CardContent, CardMedia, Button, Typography } from '@mui/material'
 
 interface IUserProps {
-	name: string
 	email: string
+	first_name: string
+	last_name: string
 	avatar: string
 }
 
-const ListItem = ({ avatar, name, email }: IUserProps) => {
+const ListItem = ({ avatar, first_name, last_name, email }: IUserProps) => {
 	return (
 		<li className='liItem'>
 			<Card sx={{ maxWidth: 250 }}>
 				<CardMedia component='img' alt='User img' height='250' image={avatar} />
 				<CardContent>
 					<Typography gutterBottom variant='h5' component='div'>
-						{name}
+						{first_name} {last_name}
 					</Typography>
 					<Typography variant='body2' color='text.secondary'>
 						{email}
