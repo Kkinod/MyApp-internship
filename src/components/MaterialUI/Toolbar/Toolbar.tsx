@@ -44,7 +44,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 	},
 }))
 
-export default function SearchAppBar() {
+ const SearchAppBar = () => {
 	const title = 'Meet ReqRes users!'
 	const subTitle = 'Meet ReqRes users! Application created with free ReqRes API'
 
@@ -70,3 +70,5 @@ export default function SearchAppBar() {
 		</Box>
 	)
 }
+
+export default SearchAppBar
