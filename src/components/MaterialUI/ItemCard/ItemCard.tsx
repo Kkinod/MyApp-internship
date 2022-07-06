@@ -1,13 +1,10 @@
-import * as React from 'react'
+import React, { useContext } from 'react'
 import { Card, CardActions, CardContent, CardMedia, Button, Typography } from '@mui/material'
+import { UsersContext } from '../../ListWrapper/ListWrapper'
 
-interface IUserProps {
-	email: string
-	first_name: string
-	avatar: string
-}
+const ItemCard = () => {
+	const { avatar, first_name, email } = useContext(UsersContext)
 
-const ImgMediaCard = ({ avatar, first_name, email }: IUserProps) => {
 	return (
 		<Card sx={{ maxWidth: 250 }} className='card'>
 			<CardMedia component='img' alt='User img' height='250' image={avatar} />
@@ -27,5 +24,31 @@ const ImgMediaCard = ({ avatar, first_name, email }: IUserProps) => {
 		</Card>
 	)
 }
+// interface IUserProps {
+// 	email: string
+// 	first_name: string
+// 	avatar: string
+// }
 
-export default ImgMediaCard
+// const ItemCard = ({ avatar, first_name, email }: IUserProps) => {
+// 	return (
+// 		<Card sx={{ maxWidth: 250 }} className='card'>
+// 			<CardMedia component='img' alt='User img' height='250' image={avatar} />
+// 			<CardContent>
+// 				<Typography gutterBottom variant='h5' component='div'>
+// 					{first_name}
+// 				</Typography>
+// 				<Typography variant='body2' color='text.secondary'>
+// 					{email}
+// 				</Typography>
+// 			</CardContent>
+// 			<CardActions>
+// 				<Button variant='contained' size='small'>
+// 					Details
+// 				</Button>
+// 			</CardActions>
+// 		</Card>
+// 	)
+// }
+
+export default ItemCard
