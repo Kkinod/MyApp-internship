@@ -12,6 +12,7 @@
 // export default ListWrapper
 
 import React, { useEffect, useState } from 'react'
+import axios from 'axios'
 import ListItem from './ListItem/ListItem'
 import LoadingButton from '@mui/lab/LoadingButton'
 
@@ -24,19 +25,18 @@ interface IListItem {
 }
 
 const ListWrapper = () => {
-	const URL = 'https://reqres.in/api/users/'
-
 	const [users, setUsers] = useState<IListItem[]>([])
-
+	const URL = 'https://reqres.in/api/users/'
+	
 	const usersList = async () => {
-		const res = await fetch(URL)
+		const res = await axios.get(URL)
 
-		if (!res.ok) {
+		if (!(res.status === 200)) {
 			const msg = `USERS NOT FOUND: ${res.status}`
 			throw new Error(msg)
 		}
-		const json = await res.json()
-		setUsers(json.data)
+
+		setUsers(res.data.data)
 	}
 
 	useEffect(() => {
