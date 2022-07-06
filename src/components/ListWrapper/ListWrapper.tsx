@@ -27,7 +27,7 @@ interface IListItem {
 const ListWrapper = () => {
 	const [users, setUsers] = useState<IListItem[]>([])
 	const URL = 'https://reqres.in/api/users/'
-	
+
 	const usersList = async () => {
 		const res = await axios.get(URL)
 
@@ -45,13 +45,15 @@ const ListWrapper = () => {
 
 	return (
 		<ul className='ulList'>
-			<LoadingButton loading variant='outlined'>
-				Submit
-			</LoadingButton>
-			{users.length &&
+			{users.length ? (
 				users.map(user => {
 					return <ListItem key={user.id} {...user} />
-				})}
+				})
+			) : (
+				<LoadingButton loading variant='outlined'>
+					Loading
+				</LoadingButton>
+			)}
 		</ul>
 	)
 }

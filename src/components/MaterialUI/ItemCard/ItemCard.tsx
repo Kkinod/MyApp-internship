@@ -1,17 +1,22 @@
 import * as React from 'react'
 import { Card, CardActions, CardContent, CardMedia, Button, Typography } from '@mui/material'
-import sun from '../../../assets/img/sun.png'
 
-const ImgMediaCard = () => {
+interface IUserProps {
+	email: string
+	first_name: string
+	avatar: string
+}
+
+const ImgMediaCard = ({ avatar, first_name, email }: IUserProps) => {
 	return (
 		<Card sx={{ maxWidth: 250 }}>
-			<CardMedia component='img' alt='User img' height='250' image={sun} />
+			<CardMedia component='img' alt='User img' height='250' image={avatar} />
 			<CardContent>
 				<Typography gutterBottom variant='h5' component='div'>
-					Kamil Pawełek
+					{first_name}
 				</Typography>
 				<Typography variant='body2' color='text.secondary'>
-					Email: email@email.com
+					{email}
 				</Typography>
 			</CardContent>
 			<CardActions>

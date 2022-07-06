@@ -1,6 +1,6 @@
 import React from 'react'
-// import Card from '../../MaterialUI/ItemCard/ItemCard'
-import { Card, CardActions, CardContent, CardMedia, Button, Typography } from '@mui/material'
+import Card from '../../MaterialUI/ItemCard/ItemCard'
+// import { Card, CardActions, CardContent, CardMedia, Button, Typography } from '@mui/material'
 
 interface IUserProps {
 	email: string
@@ -8,27 +8,34 @@ interface IUserProps {
 	avatar: string
 }
 
-const ListItem = ({ avatar, first_name, email }: IUserProps) => {
+const ListItem = (props: IUserProps) => {
 	return (
 		<li className='liItem'>
-			<Card sx={{ maxWidth: 250 }}>
-				<CardMedia component='img' alt='User img' height='250' image={avatar} />
-				<CardContent>
-					<Typography gutterBottom variant='h5' component='div'>
-						{first_name}
-					</Typography>
-					<Typography variant='body2' color='text.secondary'>
-						{email}
-					</Typography>
-				</CardContent>
-				<CardActions>
-					<Button variant='contained' size='small'>
-						Details
-					</Button>
-				</CardActions>
-			</Card>
+			<Card  {...props} />
 		</li>
 	)
 }
+// const ListItem = ({ avatar, first_name, email }: IUserProps) => {
+// 	return (
+// 		<li className='liItem'>
+// 			<Card sx={{ maxWidth: 250 }}>
+// 				<CardMedia component='img' alt='User img' height='250' image={avatar} />
+// 				<CardContent>
+// 					<Typography gutterBottom variant='h5' component='div'>
+// 						{first_name}
+// 					</Typography>
+// 					<Typography variant='body2' color='text.secondary'>
+// 						{email}
+// 					</Typography>
+// 				</CardContent>
+// 				<CardActions>
+// 					<Button variant='contained' size='small'>
+// 						Details
+// 					</Button>
+// 				</CardActions>
+// 			</Card>
+// 		</li>
+// 	)
+// }
 
 export default ListItem
