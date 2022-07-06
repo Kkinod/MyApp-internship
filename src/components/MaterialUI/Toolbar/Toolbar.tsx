@@ -44,7 +44,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 	},
 }))
 
- const SearchAppBar = () => {
+const SearchAppBar = () => {
 	const title = 'Meet ReqRes users!'
 	const subTitle = 'Meet ReqRes users! Application created with free ReqRes API'
 

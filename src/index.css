@@ -14,15 +14,16 @@ body {
 	font-family: 'Roboto', 'Montserrat', sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	background: linear-gradient(to right, #f09819, #edde5d);
 }
 
-.ulList {
+.container {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
 
-.usersList {
+.ulList {
 	display: flex;
 	margin: 2rem;
 	justify-content: center;
@@ -32,4 +33,13 @@ body {
 
 .liItem {
 	margin: 0.5rem;
+}
+
+.card {
+	background-color: red;
+	background-image:
+	  linear-gradient(
+		to right, 
+		red, #f06d06
+	  );
 }

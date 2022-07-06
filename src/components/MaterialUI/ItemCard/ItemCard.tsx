@@ -9,7 +9,7 @@ interface IUserProps {
 
 const ImgMediaCard = ({ avatar, first_name, email }: IUserProps) => {
 	return (
-		<Card sx={{ maxWidth: 250 }}>
+		<Card sx={{ maxWidth: 250 }} className='card'>
 			<CardMedia component='img' alt='User img' height='250' image={avatar} />
 			<CardContent>
 				<Typography gutterBottom variant='h5' component='div'>

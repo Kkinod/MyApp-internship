@@ -42,7 +42,6 @@ const ListWrapper = () => {
 		setUsers(res.data.data)
 		setPages(res.data.total_pages)
 		setPage(res.data.page)
-		console.log(res.data)
 	}
 
 	useEffect(() => {
@@ -50,8 +49,8 @@ const ListWrapper = () => {
 	}, [page])
 
 	return (
-		<ul className='ulList'>
-			<div className='usersList'>
+		<div className='container'>
+			<ul className='ulList'>
 				{totalPages >= 1 ? (
 					users.length ? (
 						users.map(user => {
@@ -63,9 +62,9 @@ const ListWrapper = () => {
 						</LoadingButton>
 					)
 				) : undefined}
-			</div>
+			</ul>
 			<Pagination count={totalPages} onChange={(e, page) => setPage(page)}></Pagination>
-		</ul>
+		</div>
 	)
 }
 
