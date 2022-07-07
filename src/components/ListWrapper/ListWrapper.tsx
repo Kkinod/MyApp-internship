@@ -60,7 +60,6 @@ const ListWrapper = () => {
 						users
 							// .filter(item => item.first_name.toLowerCase().includes(searchContent.toLowerCase()) && item.email.toLowerCase().includes(searchContent.toLowerCase()))
 							.filter(item => item.first_name.toLowerCase().includes(searchContent.toLowerCase()) || item.email.toLowerCase().includes(searchContent.toLowerCase()))
-							
 							.map(({ id, avatar, first_name, last_name, email }: IListItem) => {
 								return (
 									<UsersContext.Provider key={id} value={{ id, email, first_name, last_name, avatar }}>
