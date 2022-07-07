@@ -37,10 +37,6 @@ const ListWrapper = () => {
 		usersList()
 	}, [page])
 
-	// useEffect(() => {
-	// 	usersList()
-	// }, [page])
-
 	return (
 		<div className='container'>
 			<ul className='ulList'>
@@ -59,7 +55,11 @@ const ListWrapper = () => {
 							Loading
 						</LoadingButton>
 					)
-				) : undefined}
+				) : (
+					<LoadingButton loading variant='outlined'>
+						Loading
+					</LoadingButton>
+				)}
 			</ul>
 
 			<Pagination count={totalPages} onChange={(e, page) => setPage(page)}></Pagination>

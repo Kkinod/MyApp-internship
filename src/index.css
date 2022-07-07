@@ -39,7 +39,7 @@ body {
 }
 
 .liItem:hover {
-	box-shadow: -1rem .5rem 4rem  rgba(255, 68, 0, 0.836);
+	box-shadow: -1rem 0.5rem 4rem rgba(255, 68, 0, 0.836);
 }
 
 .card {
