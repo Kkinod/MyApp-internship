@@ -2,7 +2,7 @@ import React, { createContext, useEffect, useState } from 'react'
 import axios from 'axios'
 import ListItem from './ListItem/ListItem'
 import Pagination from '@mui/material/Pagination'
-import LoadingButton from '@mui/lab/LoadingButton'
+import LoadingButton from '../LoadingButton/LoadingButton'
 
 interface IListItem {
 	id: number
@@ -42,7 +42,6 @@ const ListWrapper = () => {
 			<ul className='ulList'>
 				{totalPages >= 1 ? (
 					users.length ? (
-						// users.map(user => {
 						users.map(({ id, avatar, first_name, last_name, email }: IListItem) => {
 							return (
 								<UsersContext.Provider key={id} value={{ id, email, first_name, last_name, avatar }}>
@@ -51,17 +50,12 @@ const ListWrapper = () => {
 							)
 						})
 					) : (
-						<LoadingButton loading variant='outlined'>
-							Loading
-						</LoadingButton>
+						<LoadingButton />
 					)
 				) : (
-					<LoadingButton loading variant='outlined'>
-						Loading
-					</LoadingButton>
+					<LoadingButton />
 				)}
 			</ul>
-
 			<Pagination count={totalPages} onChange={(e, page) => setPage(page)}></Pagination>
 		</div>
 	)

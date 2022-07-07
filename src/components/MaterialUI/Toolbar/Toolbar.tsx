@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { AppBar, Box, Toolbar, IconButton, Typography } from '@mui/material'
 
-const SearchAppBar = () => {
+const ToolBar = () => {
 	const title = 'Meet ReqRes users!'
 	const subTitle = 'Meet ReqRes users! Application created with free ReqRes API'
 
@@ -22,4 +22,4 @@ const SearchAppBar = () => {
 	)
 }
 
-export default SearchAppBar
+export default ToolBar
