@@ -35,7 +35,7 @@ const ListWrapper = () => {
 		}
 
 		usersList()
-	}, [page])
+	}, [page, URL])
 
 	return (
 		<div className='container'>
