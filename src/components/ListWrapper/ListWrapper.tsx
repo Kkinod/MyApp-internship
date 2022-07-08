@@ -1,8 +1,10 @@
 import React, { createContext, useEffect, useState, ChangeEvent } from 'react'
 import axios from 'axios'
-import ListItem from './ListItem/ListItem'
 import Pagination from '@mui/material/Pagination'
+import ListItem from './ListItem/ListItem'
 import LoadingButton from '../LoadingButton/LoadingButton'
+
+import SearchInput from '../MaterialUI/SearchInput/SearchInput'
 
 interface IListItem {
 	id: number
@@ -56,12 +58,7 @@ const ListWrapper = () => {
 
 	return (
 		<div className='container'>
-			<input
-				autoComplete='off'
-				name={searchContent}
-				type='text'
-				placeholder='Search…'
-				onChange={handleInputChange}></input>
+			<SearchInput onChange={handleInputChange} />
 			<ul className='ulList'>
 				{totalPages >= 1 ? (
 					users.length ? (
