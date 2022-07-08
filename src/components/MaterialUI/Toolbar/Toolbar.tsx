@@ -1,7 +1,7 @@
 import * as React from 'react'
-import { AppBar, Box, Toolbar, Typography } from '@mui/material'
+import { AppBar, Box, Toolbar, IconButton, Typography } from '@mui/material'
 
-export default function SearchAppBar() {
+const ToolBar = () => {
 	const title = 'Meet ReqRes users!'
 	const subTitle = 'Meet ReqRes users! Application created with free ReqRes API'
 
@@ -9,6 +9,7 @@ export default function SearchAppBar() {
 		<Box sx={{ flexGrow: 1 }}>
 			<AppBar position='static'>
 				<Toolbar>
+					<IconButton size='large' edge='start' color='inherit' aria-label='toolbar' sx={{ mr: 2 }}></IconButton>
 					<Typography variant='h5' noWrap component='div' sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}>
 						{title}
 						<Typography variant='h6' component='div' gutterBottom>
@@ -20,3 +21,5 @@ export default function SearchAppBar() {
 		</Box>
 	)
 }
+
+export default ToolBar
