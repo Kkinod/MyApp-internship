@@ -44,13 +44,6 @@ const ListWrapper = () => {
 		setSearchInputContent(e.target.value)
 	}
 
-	// const resultOfSearch = users.filter(user => {
-	// 	return (
-	// 		user.first_name.toLowerCase().includes(searchContent.toLowerCase()) ||
-	// 		user.email.toLowerCase().includes(searchContent.toLowerCase())
-	// 	)
-	// })
-
 	useEffect(() => {
 		setUsersFiltered(
 			users.filter(
@@ -59,32 +52,7 @@ const ListWrapper = () => {
 					user.email.toLowerCase().includes(searchContent.toLowerCase())
 			)
 		)
-		// setUsers(usersFiltered)
 	}, [searchContent, users])
-	//----------------------------
-	// useEffect(() => {
-	// 	const resultOfSearch = users.filter(
-	// 		user =>
-	// 			user.first_name.toLowerCase().includes(searchContent.toLowerCase()) ||
-	// 			user.email.toLowerCase().includes(searchContent.toLowerCase())
-	// 	)
-	// 	setUsers(resultOfSearch)
-	// }, [searchContent])
-	//----------------------------------
-	// useEffect(() => {
-	// 	const name = () => {
-
-	// 		const resultOfSearch = () =>  users.filter(
-	// 			user =>
-	// 				user.first_name.toLowerCase().includes(searchContent.toLowerCase()) ||
-	// 				user.email.toLowerCase().includes(searchContent.toLowerCase())
-	// 		);
-	// 		setUsers(resultOfSearch)
-	// 	}
-
-	// 	name()
-
-	// }, [searchContent])
 
 	return (
 		<div className='container'>
@@ -97,19 +65,13 @@ const ListWrapper = () => {
 			<ul className='ulList'>
 				{totalPages >= 1 ? (
 					users.length ? (
-						usersFiltered
-							// .filter(
-							// 	item =>
-							// 		item.first_name.toLowerCase().includes(searchContent.toLowerCase()) ||
-							// 		item.email.toLowerCase().includes(searchContent.toLowerCase())
-							// )
-							.map(({ id, avatar, first_name, last_name, email }: IListItem) => {
-								return (
-									<UsersContext.Provider key={id} value={{ id, email, first_name, last_name, avatar }}>
-										<ListItem />
-									</UsersContext.Provider>
-								)
-							})
+						usersFiltered.map(({ id, avatar, first_name, last_name, email }: IListItem) => {
+							return (
+								<UsersContext.Provider key={id} value={{ id, email, first_name, last_name, avatar }}>
+									<ListItem />
+								</UsersContext.Provider>
+							)
+						})
 					) : (
 						<LoadingButton />
 					)
