@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;1,700&family=Roboto:wght@400;700&display=swap');
 
+:root {
+	--color-primary: #045de9;
+	--color-primary-light: #09c6f9;
+
+	--box-shadow-primary: -1rem 0.5rem 4rem rgba(255, 68, 0, 0.836);
+}
+
 *,
 *::after,
 *::before {
@@ -38,10 +45,10 @@ body {
 }
 
 .liItem:hover {
-	box-shadow: -1rem 0.5rem 4rem rgba(255, 68, 0, 0.836);
+	box-shadow: var(--box-shadow-primary);
 }
 
 .card {
-	background-color: #045de9;
-	background-image: linear-gradient(315deg, #045de9 0%, #09c6f9 74%);
+	background-color: var(--color-primary);
+	background-image: linear-gradient(315deg, var(--color-primary) 0%, var(--color-primary-light) 74%);
 }

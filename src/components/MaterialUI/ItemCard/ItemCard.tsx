@@ -4,6 +4,7 @@ import { UsersContext } from '../../ListWrapper/ListWrapper'
 
 const ItemCard = () => {
 	const { avatar, first_name, email } = useContext(UsersContext)
+	const btnContent = 'Details'
 
 	return (
 		<Card sx={{ maxWidth: 250 }} className='card'>
@@ -18,7 +19,7 @@ const ItemCard = () => {
 			</CardContent>
 			<CardActions>
 				<Button variant='contained' size='small'>
-					Details
+					{btnContent}
 				</Button>
 			</CardActions>
 		</Card>
