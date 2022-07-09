@@ -4,7 +4,7 @@ import { Link, useParams } from 'react-router-dom'
 import { IListItem } from '../ListWrapper/ListWrapper'
 import { Card, CardContent, CardMedia, Typography } from '@mui/material'
 
-import ReactEmail from '../Form/Form'
+import FormMsg from '../FormMsg/FormMsg'
 
 const UsersDetails = () => {
 	const params = useParams()
@@ -40,7 +40,7 @@ const UsersDetails = () => {
 							{user.email}
 						</Typography>
 					</CardContent>
-					<ReactEmail name={user.first_name} />
+					<FormMsg name={user.first_name} />
 				</Card>
 			)}
             <Link to={'/'}>Back</Link>
