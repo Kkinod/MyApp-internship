@@ -2,7 +2,9 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { IListItem } from '../ListWrapper/ListWrapper'
-import { Card, CardActions, CardContent, CardMedia, Typography } from '@mui/material'
+import { Card, CardContent, CardMedia, Typography } from '@mui/material'
+
+import ReactEmail from '../Form/Form'
 
 const UsersDetails = () => {
 	const params = useParams()
@@ -26,10 +28,9 @@ const UsersDetails = () => {
 	}, [params])
 
 	return (
-		<>
-			{' '}
+		<div className='wrapper-users-details'>
 			{user && (
-				<Card sx={{ maxWidth: 250 }} className='card'>
+				<Card sx={{ maxWidth: 350 }} className='card'>
 					<CardMedia component='img' alt='User img' height='250' image={user.avatar} />
 					<CardContent>
 						<Typography gutterBottom variant='h5' component='div'>
@@ -39,12 +40,11 @@ const UsersDetails = () => {
 							{user.email}
 						</Typography>
 					</CardContent>
-					<CardActions>
-						<Link to={'/'}>Back</Link>
-					</CardActions>
+					<ReactEmail name={user.first_name} />
 				</Card>
 			)}
-		</>
+            <Link to={'/'}>Back</Link>
+		</div>
 	)
 }
 

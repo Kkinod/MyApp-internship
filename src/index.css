@@ -85,3 +85,10 @@ body {
 .link:hover {
 	background-color: var(--color-primary-dark);
 }
+
+.wrapper-users-details {
+	display: flex;
+	padding: 1rem;
+	align-items: center;
+	flex-direction: column;
+}
