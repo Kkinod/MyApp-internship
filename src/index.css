@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;1,700&family=Roboto:wght@400;700&display=swap');
 
 :root {
-	--color-primary: #045de9;
-	--color-primary-light: #09c6f9;
+	--color-white: #fff;
+	--color-primary: #6e7876;
+	--color-primary-dark: #565d5c;
 
-	--box-shadow-primary: -1rem 0.5rem 4rem rgba(255, 68, 0, 0.836);
+	--color-primary-text: #b3b8cd;
 }
 
 *,
@@ -21,16 +22,18 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	min-height: 100vh;
-	background-image: url(./assets/img/Nowy2.jpg);
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
+	background-color: var(--color-primary);
 }
 
-.container {
+.wrapper-list {
+	margin: 1rem;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+}
+
+.toolbar-container {
+	text-align: center;
 }
 
 .ulList {
@@ -43,13 +46,42 @@ body {
 
 .liItem {
 	margin: 1.5rem;
+	box-shadow: 5px 5px 20px -10px rgb(0 0 0 / 75%);
 }
 
 .liItem:hover {
-	box-shadow: var(--box-shadow-primary);
+	box-shadow: 20px 20px 30px -10px rgb(0 0 0 / 75%);
+	transform: translateY(-3px);
 }
 
 .card {
+	padding: 1rem;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	background-image: linear-gradient(315deg, var(--color-primary) 50%, var(--color-primary) 100%);
 	background-color: var(--color-primary);
-	background-image: linear-gradient(315deg, var(--color-primary) 0%, var(--color-primary-light) 74%);
+	text-align: center;
+}
+
+.typographyB2 {
+	color: var(--color-primary-text);
+}
+
+.avatar-container {
+	padding: 5px;
+	border: 1px solid var(--color-white);
+	border-radius: 50%;
+}
+
+.link {
+	padding: 5px 20px;
+	border: 1px solid var(--color-white);
+	border-radius: 3px;
+	color: var(--color-white);
+	text-decoration: none;
+}
+
+.link:hover {
+	background-color: var(--color-primary-dark);
 }

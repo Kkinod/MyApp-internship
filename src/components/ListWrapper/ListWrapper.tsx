@@ -5,7 +5,9 @@ import SearchInput from '../MaterialUI/SearchInput/SearchInput'
 import ListItem from './ListItem/ListItem'
 import LoadingButton from '../LoadingButton/LoadingButton'
 
-interface IListItem {
+// import { Link, BrowserRouter as Router, Route } from 'react-router-dom'
+
+export interface IListItem {
 	id: number
 	email: string
 	first_name: string
@@ -56,7 +58,7 @@ const ListWrapper = () => {
 	}, [searchContent, users])
 
 	return (
-		<div className='container'>
+		<div className='wrapper-list'>
 			<SearchInput onChange={handleInputChange} />
 			<ul className='ulList'>
 				{totalPages >= 1 ? (

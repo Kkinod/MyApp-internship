@@ -49,7 +49,6 @@ interface Props {
 }
 
 const SearchInput = ({ onChange }: Props) => {
-	// const SearchInput = (onChange) => {
 	return (
 		<Search onChange={onChange}>
 			<SearchIconWrapper>
