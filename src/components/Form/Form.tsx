@@ -1,54 +1,8 @@
-// import React from 'react'
-
-// import { Formik, Field, Form, FormikHelpers } from 'formik'
-// import * as Yup from 'yup'
-
-// interface Values {
-// 	title: string
-// 	email: string
-// }
-
-// const ReactEmail = ({ name }: { name: string }) => {
-// 	return (
-// 		<div>
-// 			<h1>Contact {name}!</h1>
-// 			<Formik
-// 				initialValues={{
-// 					firstName: '',
-// 					textarea: '',
-// 				}}
-// 				validationSchema={Yup.object({
-// 					firstName: Yup.string().max(15, 'Must be 15 characters or less').required('Required'),
-// 					textarea: Yup.string()
-// 						.min(5, 'Must be 5 characters or more')
-// 						.max(20, 'Must be 20 characters or less')
-// 						.required('Required'),
-// 				})}
-// 				onSubmit={async (values, { setSubmitting }) => {
-// 					await new Promise(r => setTimeout(r, 500))
-// 					setSubmitting(false)
-// 				}}>
-// 				<Form>
-// 					<label htmlFor='title'>Title</label>
-// 					<Field id='title' name='title' placeholder='title' />
-
-// 					<label htmlFor='textarea'>Message</label>
-// 					<Field as='textarea' id='textarea' name='textarea' />
-
-// 					<button type='submit'>Submit</button>
-// 				</Form>
-// 			</Formik>
-// 		</div>
-// 	)
-// }
-
-// export default ReactEmail
-
-import React, { useEffect } from 'react'
-import ReactDOM from 'react-dom'
-import { Formik, Form, Field, useField, useFormikContext } from 'formik'
+import React from 'react'
+import { Formik, Form, Field, useField } from 'formik'
 import * as Yup from 'yup'
-import styled from '@emotion/styled'
+import { Typography } from '@mui/material'
+import './stylesForm.css'
 
 interface IListItem {
 	label: string
@@ -57,24 +11,22 @@ interface IListItem {
 }
 
 const MyTextInput = ({ label, ...props }: IListItem) => {
-
 	const [field, meta] = useField(props)
 	return (
 		<>
 			<label htmlFor={props.name}>{label}</label>
-			<input className='text-input' {...field} {...props} />
+			<input className='form__input' {...field} {...props} />
 			{meta.touched && meta.error ? <div className='error'>{meta.error}</div> : null}
 		</>
 	)
 }
 
 const MyTextArea = ({ label, ...props }: IListItem) => {
-
 	const [field, meta] = useField(props)
 	return (
 		<>
 			<label htmlFor={props.name}>{label}</label>
-			<Field as='textarea' className='text-input' {...field} {...props} />
+			<Field as='textarea' className='form__input form__input--textarea' {...field} {...props} />
 			{meta.touched && meta.error ? <div className='error'>{meta.error}</div> : null}
 		</>
 	)
@@ -84,34 +36,34 @@ const MyTextArea = ({ label, ...props }: IListItem) => {
 const ReactEmail = ({ name }: { name: string }) => {
 	return (
 		<>
-			<h1>Subscribe!</h1>
+			<Typography variant='h6' color='white'>
+				Contact {name}!
+			</Typography>
+
 			<Formik
 				initialValues={{
 					title: '',
 					message: '',
-
 				}}
 				validationSchema={Yup.object({
 					title: Yup.string().max(15, 'Must be 15 characters or less').required('Required'),
 					message: Yup.string()
 						.min(3, 'Must be 3 characters or more')
-						.max(20, 'Must be 20 characters or less')
+						.max(40, 'Must be 40 characters or less')
 						.required('Required'),
 				})}
 				onSubmit={async (values, { setSubmitting }) => {
 					await new Promise(r => setTimeout(r, 500))
 					setSubmitting(false)
 				}}>
-				<Form>
-					{/* <label htmlFor='title'>Title</label>
-					<Field id='title' name='title' placeholder='title' />
-					<label htmlFor='textarea'>Message</label>
-					<Field as='textarea' id='textarea' name='textarea' />
-					<button type='submit'>Submit</button> */}
-					<MyTextInput label='Title' name='title' type='text' />
-					<MyTextArea label='Message' name='message' type='text' />
-
-					<button type='submit'>Submit</button>
+				<Form className='form'>
+					<div className='form__wrapper'>
+						<MyTextInput label='Title' name='title' type='text' />
+						<MyTextArea label='Message' name='message' type='text' />
+					</div>
+					<button type='submit' className='link'>
+						Submit
+					</button>
 				</Form>
 			</Formik>
 		</>
