@@ -1,9 +1,9 @@
 import React, { createContext, useEffect, useState, ChangeEvent } from 'react'
-import axios from 'axios'
 import Pagination from '@mui/material/Pagination'
 import SearchInput from '../MaterialUI/SearchInput/SearchInput'
 import ListItem from './ListItem/ListItem'
 import LoadingButton from '../LoadingButton/LoadingButton'
+import ApiDefault from '../../api/api'
 
 export interface IListItem {
 	id: number
@@ -25,20 +25,11 @@ const ListWrapper = () => {
 	const URL = `https://reqres.in/api/users?page=${page}`
 
 	useEffect(() => {
-		const usersList = async () => {
-			const res = await axios.get(URL)
-
-			if (!(res.status === 200)) {
-				const msg = `USERS NOT FOUND: ${res.status}`
-				throw alert(msg)
-			}
-
+		ApiDefault(URL).then(res => {
 			setUsers(res.data.data)
 			setPages(res.data.total_pages)
 			setPage(res.data.page)
-		}
-
-		usersList()
+		})
 	}, [page, URL])
 
 	const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {

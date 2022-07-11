@@ -1,29 +1,20 @@
 import React, { useEffect, useState } from 'react'
-import axios from 'axios'
 import { Link, useParams } from 'react-router-dom'
 import { Card, CardContent, CardMedia, Typography } from '@mui/material'
 import { IListItem } from '../ListWrapper/ListWrapper'
 import FormMsg from '../FormMsg/FormMsg'
+import ApiDefault from '../../api/api'
 
 const UsersDetails = () => {
 	const params = useParams()
 	const [user, setUser] = useState<IListItem>()
+	const URL = `https://reqres.in/api/users/${params.userID}`
 
 	useEffect(() => {
-		const URL = `https://reqres.in/api/users/${params.userID}`
-
-		const usersList = async () => {
-			const res = await axios.get(URL)
-
-			if (!(res.status === 200)) {
-				const msg = `USER NOT FOUND: ${res.status}`
-				throw alert(msg)
-			}
+		ApiDefault(URL).then(res => {
 			setUser(res.data.data)
-		}
-
-		usersList()
-	}, [params])
+		})
+	}, [params, URL])
 
 	return (
 		<div className='wrapper-users-details'>
