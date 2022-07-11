@@ -1,6 +1,5 @@
 import * as React from 'react'
 import { AppBar, Box, Toolbar, Typography } from '@mui/material'
-// import SearchInput from '../SearchInput/SearchInput'
 
 const ToolAndSarchBar = () => {
 	const title = 'Meet ReqRes users!'

@@ -5,8 +5,6 @@ import SearchInput from '../MaterialUI/SearchInput/SearchInput'
 import ListItem from './ListItem/ListItem'
 import LoadingButton from '../LoadingButton/LoadingButton'
 
-// import { Link, BrowserRouter as Router, Route } from 'react-router-dom'
-
 export interface IListItem {
 	id: number
 	email: string

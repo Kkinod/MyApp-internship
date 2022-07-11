@@ -1,7 +1,7 @@
 import React from 'react'
+import { Typography } from '@mui/material'
 import { Formik, Form } from 'formik'
 import * as Yup from 'yup'
-import { Typography } from '@mui/material'
 import './stylesForm.css'
 
 import { MyTextArea, MyTextInput } from './Form/Form'
@@ -38,7 +38,7 @@ const FormMsg = ({ name }: { name: string }) => {
 						<MyTextArea label='Message' name='message' type='text' placeholder='Message' />
 					</div>
 					<button type='submit' className='link'>
-						Submit
+						Send message
 					</button>
 				</Form>
 			</Formik>

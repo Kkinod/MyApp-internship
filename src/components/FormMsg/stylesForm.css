@@ -11,8 +11,8 @@
 }
 
 .form__input {
-	min-width: 15rem;
-	max-width: 15rem;
+	min-width: 20rem;
+	max-width: 20rem;
 	padding: 0.65rem 0.5rem;
 	color: var(--white);
 	background-color: var(--color-primary-dark);
