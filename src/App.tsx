@@ -8,14 +8,12 @@ import PageNotFound from './components/PageNotFound/PageNotFound'
 function App() {
 	return (
 		<Router>
-			<div>
-				<Toolbar />
-				<Routes>
-					<Route path='/' element={<ListWrapper />} />
-					<Route path='/usersDetails/:userID' element={<UsersDetails />} />
-					<Route path='*' element={<PageNotFound />} />
-				</Routes>
-			</div>
+			<Toolbar />
+			<Routes>
+				<Route path='/' element={<ListWrapper />} />
+				<Route path='/usersDetails/:userID' element={<UsersDetails />} />
+				<Route path='*' element={<PageNotFound />} />
+			</Routes>
 		</Router>
 	)
 }

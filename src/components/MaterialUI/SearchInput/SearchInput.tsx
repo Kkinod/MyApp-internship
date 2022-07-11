@@ -49,7 +49,7 @@ interface Props {
 
 const SearchInput = ({ onChange }: Props) => {
 	return (
-		<Search onChange={onChange}>
+		<Search onChange={onChange} className='search'>
 			<SearchIconWrapper>
 				<SearchIcon />
 			</SearchIconWrapper>

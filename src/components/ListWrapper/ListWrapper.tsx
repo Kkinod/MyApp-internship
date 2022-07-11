@@ -57,32 +57,30 @@ const ListWrapper = () => {
 	}, [searchContent, users])
 
 	return (
-		<div className='wrapper-list'>
-			<div className='container-list'>
-				<SideBar />
-				<div className='abc'>
-					<SearchInput onChange={handleInputChange} />
-					<div className='container-sideBar-ulList'>
-						<ul className='ulList'>
-							{totalPages >= 1 ? (
-								users.length ? (
-									usersFiltered.map(({ id, avatar, first_name, last_name, email }: IListItem) => {
-										return (
-											<UsersContext.Provider key={id} value={{ id, email, first_name, last_name, avatar }}>
-												<ListItem />
-											</UsersContext.Provider>
-										)
-									})
-								) : (
-									<LoadingButton />
-								)
+		<div className='main'>
+			<SideBar />
+			<div className='wrapper'>
+				<SearchInput onChange={handleInputChange} />
+				<div className='users-list__container'>
+					<ul className='users-list'>
+						{totalPages >= 1 ? (
+							users.length ? (
+								usersFiltered.map(({ id, avatar, first_name, last_name, email }: IListItem) => {
+									return (
+										<UsersContext.Provider key={id} value={{ id, email, first_name, last_name, avatar }}>
+											<ListItem />
+										</UsersContext.Provider>
+									)
+								})
 							) : (
 								<LoadingButton />
-							)}
-						</ul>
-						<Pagination count={totalPages} onChange={(e, page) => setPage(page)}></Pagination>
-					</div>
+							)
+						) : (
+							<LoadingButton />
+						)}
+					</ul>
 				</div>
+				<Pagination count={totalPages} onChange={(e, page) => setPage(page)}></Pagination>
 			</div>
 		</div>
 	)

@@ -3,6 +3,8 @@ import axios from 'axios'
 // import { IListItem } from '../ListWrapper/ListWrapper'
 import './stylesSideBar.css'
 import { CardMedia } from '@mui/material'
+import { Avatar, Card, CardActions, CardContent, Typography } from '@mui/material'
+import AppBar from '@mui/material/AppBar'
 
 // interface IShiba {
 // 	data: string
@@ -36,12 +38,21 @@ const SideBar = () => {
 	}, [URL])
 
 	return (
-		<div className='side-bar-container'>
-			<div className='side-bar'>
-				<img src={shibes} alt='' className='side-bar__img'/>
-			</div>
+		<div className='side-bar__container'>
+			<Typography gutterBottom variant='h5' component='div' color='white'>
+				SHIBA
+			</Typography>
+
+			<Avatar alt='Remy Sharp' src={shibes} sx={{ width: 120, height: 120 }} className='avatar' />
 		</div>
 	)
+	// return (
+	// 	<div className='side-bar__container'>
+	// 		<div className='side-bar'>
+	// 			<img src={shibes} alt='' className='side-bar__img'/>
+	// 		</div>
+	// 	</div>
+	// )
 }
 
 export default SideBar
