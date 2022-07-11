@@ -30,20 +30,24 @@ const UsersDetails = () => {
 	return (
 		<div className='wrapper-users-details'>
 			{user && (
-				<Card sx={{ maxWidth: 350 }} className='card'>
-					<CardMedia component='img' alt='User img' height='250' image={user.avatar} />
-					<CardContent>
-						<Typography gutterBottom variant='h5' component='div'>
-							{user.first_name} {user.last_name}
-						</Typography>
-						<Typography variant='body2' color='text.secondary'>
-							{user.email}
-						</Typography>
-					</CardContent>
-					<FormMsg name={user.first_name} />
-				</Card>
+				<div className='container-card'>
+					<Card sx={{ maxWidth: 350 }} className='card'>
+						<CardMedia component='img' alt='User img' height='250' image={user.avatar} />
+						<CardContent>
+							<Typography gutterBottom variant='h5' component='div'>
+								{user.first_name} {user.last_name}
+							</Typography>
+							<Typography variant='body2' color='text.secondary'>
+								{user.email}
+							</Typography>
+						</CardContent>
+						<FormMsg name={user.first_name} />
+					</Card>
+				</div>
 			)}
-            <Link to={'/'}>Back</Link>
+			<Link to={'/'} className='btn-backLink'>
+				&larr; Back
+			</Link>
 		</div>
 	)
 }

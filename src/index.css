@@ -6,6 +6,8 @@
 	--color-primary-dark: #565d5c;
 
 	--color-primary-text: #b3b8cd;
+
+	--box-shadow-primary: 5px 5px 20px -10px rgb(0 0 0 / 75%);
 }
 
 *,
@@ -46,7 +48,7 @@ body {
 
 .liItem {
 	margin: 1.5rem;
-	box-shadow: 5px 5px 20px -10px rgb(0 0 0 / 75%);
+	box-shadow: var(--box-shadow-primary);
 }
 
 .liItem:hover {
@@ -92,4 +94,13 @@ body {
 	padding: 1rem;
 	align-items: center;
 	flex-direction: column;
+}
+
+.btn-backLink {
+	color: white;
+	margin-top: 2rem;
+}
+
+.container-card {
+	box-shadow: var(--box-shadow-primary);
 }

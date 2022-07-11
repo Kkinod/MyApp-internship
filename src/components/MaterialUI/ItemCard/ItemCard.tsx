@@ -22,7 +22,7 @@ const ItemCard = () => {
 				</Typography>
 			</CardContent>
 			<CardActions>
-				<Link to={`/usersDatails/${id}`} className='link'>
+				<Link to={`/usersDetails/${id}`} className='link'>
 					{btnContent}{' '}
 				</Link>
 			</CardActions>

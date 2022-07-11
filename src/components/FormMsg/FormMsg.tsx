@@ -19,7 +19,10 @@ const FormMsg = ({ name }: { name: string }) => {
 					message: '',
 				}}
 				validationSchema={Yup.object({
-					title: Yup.string().max(15, 'Must be 15 characters or less').required('Required'),
+					title: Yup.string()
+						.min(2, 'Must be 2 characters or more')
+						.max(15, 'Must be 15 characters or less')
+						.required('Required'),
 					message: Yup.string()
 						.min(3, 'Must be 3 characters or more')
 						.max(40, 'Must be 40 characters or less')
