@@ -35,3 +35,13 @@
 	color: red;
 	font-size: 0.8rem;
 }
+
+.side-bar {
+	background: transparent;
+	width: 20rem;
+	
+}
+
+.side-bar__img {
+	width: 20rem;
+}

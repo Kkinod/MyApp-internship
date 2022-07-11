@@ -58,27 +58,31 @@ const ListWrapper = () => {
 
 	return (
 		<div className='wrapper-list'>
-			<SideBar />
-			<div className='container-sideBar-ulList'>
-				<SearchInput onChange={handleInputChange} />
-				<ul className='ulList'>
-					{totalPages >= 1 ? (
-						users.length ? (
-							usersFiltered.map(({ id, avatar, first_name, last_name, email }: IListItem) => {
-								return (
-									<UsersContext.Provider key={id} value={{ id, email, first_name, last_name, avatar }}>
-										<ListItem />
-									</UsersContext.Provider>
+			<div className='container-list'>
+				<SideBar />
+				<div className='abc'>
+					<SearchInput onChange={handleInputChange} />
+					<div className='container-sideBar-ulList'>
+						<ul className='ulList'>
+							{totalPages >= 1 ? (
+								users.length ? (
+									usersFiltered.map(({ id, avatar, first_name, last_name, email }: IListItem) => {
+										return (
+											<UsersContext.Provider key={id} value={{ id, email, first_name, last_name, avatar }}>
+												<ListItem />
+											</UsersContext.Provider>
+										)
+									})
+								) : (
+									<LoadingButton />
 								)
-							})
-						) : (
-							<LoadingButton />
-						)
-					) : (
-						<LoadingButton />
-					)}
-				</ul>
-				<Pagination count={totalPages} onChange={(e, page) => setPage(page)}></Pagination>
+							) : (
+								<LoadingButton />
+							)}
+						</ul>
+						<Pagination count={totalPages} onChange={(e, page) => setPage(page)}></Pagination>
+					</div>
+				</div>
 			</div>
 		</div>
 	)

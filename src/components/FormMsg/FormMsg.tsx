@@ -7,7 +7,6 @@ import './stylesForm.css'
 import { MyTextArea, MyTextInput } from './Form/Form'
 
 const FormMsg = ({ name }: { name: string }) => {
-	
 	return (
 		<>
 			<Typography variant='h6' color='white'>
