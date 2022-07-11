@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import { Avatar, Card, CardActions, CardContent, Typography } from '@mui/material'
 import { UsersContext } from '../../ListWrapper/ListWrapper'
 
-
 const ItemCard = () => {
 	const { id, avatar, first_name, email } = useContext(UsersContext)
 	const btnContent = 'Details'
@@ -14,7 +13,7 @@ const ItemCard = () => {
 				<Avatar alt='Remy Sharp' src={avatar} sx={{ width: 104, height: 104 }} className='avatar' />
 			</div>
 			<CardContent>
-				<Typography gutterBottom variant='h5' component='div' color='white'>
+				<Typography gutterBottom variant='h5' component='div' className='typographyH5'>
 					{first_name}
 				</Typography>
 				<Typography variant='body2' className='typographyB2'>
@@ -23,7 +22,7 @@ const ItemCard = () => {
 			</CardContent>
 			<CardActions>
 				<Link to={`/usersDetails/${id}`} className='link'>
-					{btnContent}{' '}
+					{btnContent}
 				</Link>
 			</CardActions>
 		</Card>

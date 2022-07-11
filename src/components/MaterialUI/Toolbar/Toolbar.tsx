@@ -9,12 +9,7 @@ const ToolAndSarchBar = () => {
 		<Box sx={{ flexGrow: 1 }}>
 			<AppBar position='static' color='transparent'>
 				<Toolbar className='toolbar-container'>
-					<Typography
-						variant='h5'
-						noWrap
-						component='div'
-						sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
-						color='white'>
+					<Typography variant='h5' noWrap component='div' sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }} className='typographyH5'>
 						{title}
 						<Typography variant='h6' component='div' gutterBottom>
 							{subTitle}

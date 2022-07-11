@@ -66,6 +66,10 @@ body {
 	background-image: linear-gradient(315deg, var(--color-primary) 50%, var(--color-primary) 100%);
 }
 
+.typographyH5 {
+	color: var(--color-white);
+}
+
 .typographyB2 {
 	color: var(--color-primary-text);
 }

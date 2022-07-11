@@ -2,11 +2,16 @@ import React from 'react'
 import { Typography } from '@mui/material'
 import { Formik, Form } from 'formik'
 import * as Yup from 'yup'
+import { CustomTextInput } from './Form/Form'
 import './stylesForm.css'
 
-import { MyTextArea, MyTextInput } from './Form/Form'
-
 const FormMsg = ({ name }: { name: string }) => {
+	const textInput = 'Title'
+	const textInputName = 'title'
+	const textArea = 'Message'
+	const textAreaName = 'message'
+	const btnSubmit = 'Send message'
+
 	return (
 		<>
 			<Typography variant='h6' color='white'>
@@ -34,11 +39,24 @@ const FormMsg = ({ name }: { name: string }) => {
 				}}>
 				<Form className='form'>
 					<div className='form__wrapper'>
-						<MyTextInput label='Title' name='title' type='text' placeholder='Title' />
-						<MyTextArea label='Message' name='message' type='text' placeholder='Message' />
+						<CustomTextInput
+							label={textInput}
+							name={textInputName}
+							type='text'
+							placeholder={textInput}
+							className='form__input form__input--inputText'
+						/>
+						<CustomTextInput
+							as='textarea'
+							label={textArea}
+							name={textAreaName}
+							type='text'
+							placeholder={textArea}
+							className='form__input form__input--textArea'
+						/>
 					</div>
 					<button type='submit' className='link'>
-						Send message
+						{btnSubmit}
 					</button>
 				</Form>
 			</Formik>
