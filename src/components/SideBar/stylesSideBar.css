@@ -3,8 +3,11 @@
 }
 
 .side-bar {
+    position: relative;
+    display: inline-block;
+    top: 0;
     width: 10rem;
-    height: 10rem;
+    height: 100vh;
     background-color: #fff;
 }
 
