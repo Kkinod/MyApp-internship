@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { AppBar, Box, Toolbar, IconButton, Typography } from '@mui/material'
+import { AppBar, Box, Toolbar, Typography } from '@mui/material'
 
 const ToolAndSarchBar = () => {
 	const title = 'Meet ReqRes users!'
@@ -7,10 +7,9 @@ const ToolAndSarchBar = () => {
 
 	return (
 		<Box sx={{ flexGrow: 1 }}>
-			<AppBar position='static'>
-				<Toolbar>
-					<IconButton size='large' edge='start' color='inherit' aria-label='toolbar' sx={{ mr: 2 }}></IconButton>
-					<Typography variant='h5' noWrap component='div' sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}>
+			<AppBar position='static' color='transparent'>
+				<Toolbar className='toolbar-container'>
+					<Typography variant='h5' noWrap component='div' sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }} className='typographyH5'>
 						{title}
 						<Typography variant='h6' component='div' gutterBottom>
 							{subTitle}

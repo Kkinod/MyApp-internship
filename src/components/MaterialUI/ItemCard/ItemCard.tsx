@@ -1,26 +1,29 @@
 import React, { useContext } from 'react'
-import { Card, CardActions, CardContent, CardMedia, Button, Typography } from '@mui/material'
+import { Link } from 'react-router-dom'
+import { Avatar, Card, CardActions, CardContent, Typography } from '@mui/material'
 import { UsersContext } from '../../ListWrapper/ListWrapper'
 
 const ItemCard = () => {
-	const { avatar, first_name, email } = useContext(UsersContext)
+	const { id, avatar, first_name, email } = useContext(UsersContext)
 	const btnContent = 'Details'
 
 	return (
-		<Card sx={{ maxWidth: 250 }} className='card'>
-			<CardMedia component='img' alt='User img' height='250' image={avatar} />
+		<Card sx={{ width: 200 }} className='card'>
+			<div className='avatar-container'>
+				<Avatar alt='Remy Sharp' src={avatar} sx={{ width: 104, height: 104 }} className='avatar' />
+			</div>
 			<CardContent>
-				<Typography gutterBottom variant='h5' component='div'>
+				<Typography gutterBottom variant='h5' component='div' className='typographyH5'>
 					{first_name}
 				</Typography>
-				<Typography variant='body2' color='text.secondary'>
+				<Typography variant='body2' className='typographyB2'>
 					{email}
 				</Typography>
 			</CardContent>
 			<CardActions>
-				<Button variant='contained' size='small'>
+				<Link to={`/usersDetails/${id}`} className='link'>
 					{btnContent}
-				</Button>
+				</Link>
 			</CardActions>
 		</Card>
 	)

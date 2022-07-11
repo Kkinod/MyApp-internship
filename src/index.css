@@ -1,10 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;1,700&family=Roboto:wght@400;700&display=swap');
 
 :root {
-	--color-primary: #045de9;
-	--color-primary-light: #09c6f9;
+	--color-white: #fff;
+	--color-primary: #6e7876;
+	--color-primary-dark: #565d5c;
 
-	--box-shadow-primary: -1rem 0.5rem 4rem rgba(255, 68, 0, 0.836);
+	--color-primary-text: #b3b8cd;
+
+	--box-shadow-primary: 5px 5px 20px -10px rgb(0 0 0 / 75%);
 }
 
 *,
@@ -17,20 +20,22 @@
 
 body {
 	box-sizing: border-box;
+	min-height: 100vh;
 	font-family: 'Roboto', 'Montserrat', sans-serif;
+	background-color: var(--color-primary);
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	min-height: 100vh;
-	background-image: url(./assets/img/Nowy2.jpg);
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
 }
 
-.container {
+.wrapper-list {
 	display: flex;
+	margin: 1rem;
 	flex-direction: column;
 	align-items: center;
+}
+
+.toolbar-container {
+	text-align: center;
 }
 
 .ulList {
@@ -43,13 +48,63 @@ body {
 
 .liItem {
 	margin: 1.5rem;
-}
-
-.liItem:hover {
 	box-shadow: var(--box-shadow-primary);
 }
 
+.liItem:hover {
+	box-shadow: 20px 20px 30px -10px rgb(0 0 0 / 75%);
+	transform: translateY(-3px);
+}
+
 .card {
+	display: flex;
+	padding: 1rem;
+	align-items: center;
+	text-align: center;
+	flex-direction: column;
 	background-color: var(--color-primary);
-	background-image: linear-gradient(315deg, var(--color-primary) 0%, var(--color-primary-light) 74%);
+	background-image: linear-gradient(315deg, var(--color-primary) 50%, var(--color-primary) 100%);
+}
+
+.typographyH5 {
+	color: var(--color-white);
+}
+
+.typographyB2 {
+	color: var(--color-primary-text);
+}
+
+.avatar-container {
+	padding: 5px;
+	border: 1px solid var(--color-white);
+	border-radius: 50%;
+}
+
+.link {
+	padding: 5px 20px;
+	border: 1px solid var(--color-white);
+	text-decoration: none;
+	background-color: transparent;
+	border-radius: 3px;
+	color: var(--color-white);
+}
+
+.link:hover {
+	background-color: var(--color-primary-dark);
+}
+
+.wrapper-users-details {
+	display: flex;
+	padding: 1rem;
+	align-items: center;
+	flex-direction: column;
+}
+
+.btn-backLink {
+	color: white;
+	margin-top: 2rem;
+}
+
+.container-card {
+	box-shadow: var(--box-shadow-primary);
 }
