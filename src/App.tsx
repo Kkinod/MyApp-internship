@@ -14,7 +14,7 @@ function App() {
 				<Routes>
 					<Route path='/' element={<ListWrapper />} />
 					<Route path='/usersDetails/:userID' element={<UsersDetails />} />
-					<Route  path='*' element={<PageNotFound />} />
+					<Route path='*' element={<PageNotFound />} />
 				</Routes>
 			</div>
 		</Router>

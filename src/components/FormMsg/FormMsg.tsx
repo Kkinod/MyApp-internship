@@ -13,6 +13,14 @@ const FormMsg = ({ name }: { name: string }) => {
 	const btnSubmit = 'Send message'
 	const minCharacters = 1
 	const maxCharacters = 255
+	const validationTitle = Yup.string()
+		.min(minCharacters, `Must be ${minCharacters} characters or more`)
+		.max(maxCharacters, `Must be ${maxCharacters} characters or less`)
+		.required('Required')
+	const validationMessage = Yup.string()
+		.min(minCharacters, `Must be ${minCharacters} characters or more`)
+		.max(maxCharacters, `Must be ${maxCharacters} characters or less`)
+		.required('Required')
 
 	return (
 		<>
@@ -26,14 +34,8 @@ const FormMsg = ({ name }: { name: string }) => {
 					message: '',
 				}}
 				validationSchema={Yup.object({
-					title: Yup.string()
-						.min(minCharacters, `Must be ${minCharacters} characters or more`)
-						.max(maxCharacters, `Must be ${maxCharacters} characters or less`)
-						.required('Required'),
-					message: Yup.string()
-						.min(minCharacters, `Must be ${minCharacters} characters or more`)
-						.max(maxCharacters, `Must be ${maxCharacters} characters or less`)
-						.required('Required'),
+					title: validationTitle,
+					message: validationMessage,
 				})}
 				onSubmit={async (values, { setSubmitting }) => {
 					await new Promise(r => setTimeout(r, 500))
