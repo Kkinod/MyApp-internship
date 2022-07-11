@@ -6,7 +6,7 @@ const ToolAndSarchBar = () => {
 	const subTitle = 'Meet ReqRes users! Application created with free ReqRes API'
 
 	return (
-		<Box sx={{ flexGrow: 1 }}>
+		// <Box sx={{ flexGrow: 1 }}>
 			<AppBar position='static' color='transparent'>
 				<Toolbar className='toolbar-container'>
 					<Typography
@@ -22,7 +22,7 @@ const ToolAndSarchBar = () => {
 					</Typography>
 				</Toolbar>
 			</AppBar>
-		</Box>
+		// </Box>
 	)
 }
 

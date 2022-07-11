@@ -29,7 +29,7 @@ body {
 
 .wrapper-list {
 	display: flex;
-	margin: 1rem;
+	margin: 1rem 0;
 	flex-direction: column;
 	align-items: center;
 }
@@ -103,4 +103,16 @@ body {
 
 .container-card {
 	box-shadow: var(--box-shadow-primary);
+}
+
+
+
+.containter-ul-list {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.container-sideBar-ulList {
+	display: flex;
 }
