@@ -1,10 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import axios from 'axios'
 // import { IListItem } from '../ListWrapper/ListWrapper'
 import './stylesSideBar.css'
-import { CardMedia } from '@mui/material'
-import { Avatar, Card, CardActions, CardContent, Typography } from '@mui/material'
-import AppBar from '@mui/material/AppBar'
+import { Avatar, Typography } from '@mui/material'
 
 // interface IShiba {
 // 	data: string
@@ -13,18 +11,29 @@ import AppBar from '@mui/material/AppBar'
 const SideBar = () => {
 	const [shibes, setShibes] = useState<string>()
 
+	const reff = useRef<HTMLButtonElement>(null)
+
 	useEffect(() => {
 		const URL = 'http://shibe.online/api/shibes?count=1&urls=true&httpsUrls=true'
 
-		const usersList = async () => {
+		const shibeImg = async () => {
 			const res = await axios.get(URL)
 
 			if (!(res.status === 200)) {
 				const msg = `USER NOT FOUND: ${res.status}`
 				throw alert(msg)
 			}
-			console.log(res)
 			setShibes(res.data)
+		}
+
+		const element = reff.current
+
+		if (null !== element) {
+			element.addEventListener('click', shibeImg)
+
+			return () => {
+				element.removeEventListener('click', shibeImg)
+			}
 		}
 
 		// fetch(URL)
@@ -34,8 +43,8 @@ const SideBar = () => {
 		// 		setShibes(data2)
 		// 	})
 
-		usersList()
-	}, [URL])
+		shibeImg()
+	}, [])
 
 	return (
 		<div className='side-bar__container'>
@@ -44,6 +53,7 @@ const SideBar = () => {
 			</Typography>
 
 			<Avatar alt='Remy Sharp' src={shibes} sx={{ width: 120, height: 120 }} className='avatar' />
+			<button ref={reff}>Abc</button>
 		</div>
 	)
 	// return (
