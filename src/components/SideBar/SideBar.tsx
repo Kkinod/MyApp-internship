@@ -1,25 +1,22 @@
 import React, { useEffect, useState, useRef } from 'react'
-import axios from 'axios'
 import { Avatar, Typography } from '@mui/material'
+import ApiDefault from '../../api/api'
 import './stylesSideBar.css'
 
 const SideBar = () => {
 	const [shibes, setShibes] = useState<string>()
-
 	const reff = useRef<HTMLButtonElement>(null)
+
+	const shibaTitle = 'Give a smile to shiba!'
 
 	useEffect(() => {
 		const URL = 'http://shibe.online/api/shibes?count=1&urls=true&httpsUrls=true'
 		const element = reff.current
 
-		const shibeImg = async () => {
-			const res = await axios.get(URL)
-
-			if (!(res.status === 200)) {
-				const msg = `USER NOT FOUND: ${res.status}`
-				throw alert(msg)
-			}
-			setShibes(res.data)
+		const shibeImg = () => {
+			ApiDefault(URL).then(res => {
+				setShibes(res.data)
+			})
 		}
 
 		if (null !== element) {
@@ -36,11 +33,11 @@ const SideBar = () => {
 	return (
 		<div className='side-bar__container'>
 			<Typography gutterBottom variant='h5' component='div' color='white'>
-				SHIBA
+				{shibaTitle}
 			</Typography>
 
 			<Avatar alt='Remy Sharp' src={shibes} sx={{ width: 120, height: 120 }} className='avatar' />
-			<button ref={reff}>Abc</button>
+			<button ref={reff}>Get new shiba image</button>
 		</div>
 	)
 }
