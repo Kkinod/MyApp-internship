@@ -1,12 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react'
 import axios from 'axios'
-// import { IListItem } from '../ListWrapper/ListWrapper'
-import './stylesSideBar.css'
 import { Avatar, Typography } from '@mui/material'
-
-// interface IShiba {
-// 	data: string
-// }
+import './stylesSideBar.css'
 
 const SideBar = () => {
 	const [shibes, setShibes] = useState<string>()
@@ -15,6 +10,7 @@ const SideBar = () => {
 
 	useEffect(() => {
 		const URL = 'http://shibe.online/api/shibes?count=1&urls=true&httpsUrls=true'
+		const element = reff.current
 
 		const shibeImg = async () => {
 			const res = await axios.get(URL)
@@ -26,8 +22,6 @@ const SideBar = () => {
 			setShibes(res.data)
 		}
 
-		const element = reff.current
-
 		if (null !== element) {
 			element.addEventListener('click', shibeImg)
 
@@ -35,13 +29,6 @@ const SideBar = () => {
 				element.removeEventListener('click', shibeImg)
 			}
 		}
-
-		// fetch(URL)
-		// 	.then(res => res.json())
-		// 	.then(data => console.log(data))
-		// 	.then(data2 => {
-		// 		setShibes(data2)
-		// 	})
 
 		shibeImg()
 	}, [])
@@ -56,13 +43,6 @@ const SideBar = () => {
 			<button ref={reff}>Abc</button>
 		</div>
 	)
-	// return (
-	// 	<div className='side-bar__container'>
-	// 		<div className='side-bar'>
-	// 			<img src={shibes} alt='' className='side-bar__img'/>
-	// 		</div>
-	// 	</div>
-	// )
 }
 
 export default SideBar

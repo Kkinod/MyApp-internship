@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import { Avatar, Card, CardActions, CardContent, Typography } from '@mui/material'
 import { UsersContext } from '../../ListWrapper/ListWrapper'
 
-
 const ItemCard = () => {
 	const { id, avatar, first_name, email } = useContext(UsersContext)
 	const btnContent = 'Details'
