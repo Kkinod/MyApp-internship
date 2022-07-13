@@ -71,7 +71,7 @@ const ListWrapper = () => {
 						)}
 					</ul>
 				</div>
-				<Pagination count={totalPages} onChange={(e, page) => setPage(page)}></Pagination>
+				<Pagination count={totalPages} onChange={(e, page) => setPage(page)} data-testid='pagination' />
 			</div>
 		</div>
 	)
