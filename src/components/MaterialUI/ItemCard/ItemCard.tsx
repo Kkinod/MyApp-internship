@@ -10,7 +10,11 @@ const ItemCard = () => {
 	return (
 		<Card sx={{ width: 200 }} className='card'>
 			<div className='avatar-container'>
-				<Avatar alt='Remy Sharp' src={avatar} sx={{ width: 104, height: 104 }} className='avatar' />
+				{avatar ? (
+					<Avatar alt='User photo' src={avatar} sx={{ width: 104, height: 104 }} className='avatar' />
+				) : (
+					<Avatar alt='No User photo' src={avatar} sx={{ width: 104, height: 104 }} className='avatar' />
+				)}
 			</div>
 			<CardContent>
 				<Typography gutterBottom variant='h5' component='div' className='typographyH5'>
