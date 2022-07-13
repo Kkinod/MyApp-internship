@@ -29,11 +29,12 @@ body {
 
 .wrapper {
 	display: flex;
-	min-height: 100vh;
+	min-height: 92vh;
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-between;
 	padding: 1rem;
+	width: 100%;
 }
 
 .main {

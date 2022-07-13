@@ -35,7 +35,6 @@ const SideBar = () => {
 			<Typography gutterBottom variant='h5' component='div' color='white'>
 				{shibaTitle}
 			</Typography>
-
 			<Avatar alt='Remy Sharp' src={shibes} sx={{ width: 120, height: 120 }} className='avatar' />
 			<button ref={reff}>Get new shiba image</button>
 		</div>
