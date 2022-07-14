@@ -53,7 +53,7 @@ const ListWrapper = () => {
 			<div className='wrapper'>
 				<SearchInput onChange={handleInputChange} />
 				<div className='users-list__container'>
-					<ul className='users-list'>
+					<ul className='users-list' data-testid='userList'>
 						{totalPages >= 1 ? (
 							users.length ? (
 								usersFiltered.map(({ id, avatar, first_name, last_name, email }: IListItem) => {

@@ -1,10 +1,13 @@
 import React from 'react'
 import LoadingButton from '@mui/lab/LoadingButton'
+import SaveIcon from '@mui/icons-material/Save'
 
 const LoadingBtn = () => {
+	const noUserTxt = 'User Not Found'
+
 	return (
-		<LoadingButton loading variant='outlined'>
-			Loading
+		<LoadingButton loading loadingPosition='start' startIcon={<SaveIcon />} variant='outlined'>
+			{noUserTxt}
 		</LoadingButton>
 	)
 }

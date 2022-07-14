@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`shapshot for App component 1`] = `
+exports[`Shapshot test shapshot for App component 1`] = `
 <div>
   <div
     className="MuiBox-root css-i9gxme"
@@ -31,28 +31,34 @@ exports[`shapshot for App component 1`] = `
       className="side-bar__container"
     >
       <div
-        className="MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom css-10gsmdd-MuiTypography-root"
+        className="side-bar"
       >
-        Give a smile to shiba!
-      </div>
-      <div
-        className="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault avatar css-12kx30u-MuiAvatar-root"
-      >
-        <svg
-          aria-hidden={true}
-          className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiAvatar-fallback css-10mi8st-MuiSvgIcon-root-MuiAvatar-fallback"
-          data-testid="PersonIcon"
-          focusable="false"
-          viewBox="0 0 24 24"
+        <div
+          className="MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom css-10gsmdd-MuiTypography-root"
         >
-          <path
-            d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
-          />
-        </svg>
+          Give a smile to shiba!
+        </div>
+        <div
+          className="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault avatar css-12kx30u-MuiAvatar-root"
+        >
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiAvatar-fallback css-10mi8st-MuiSvgIcon-root-MuiAvatar-fallback"
+            data-testid="PersonIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+            />
+          </svg>
+        </div>
+        <button
+          className="link"
+        >
+          Get new shiba image
+        </button>
       </div>
-      <button>
-        Get new shiba image
-      </button>
     </div>
     <div
       className="wrapper"
@@ -97,9 +103,10 @@ exports[`shapshot for App component 1`] = `
       >
         <ul
           className="users-list"
+          data-testid="userList"
         >
           <button
-            className="MuiLoadingButton-root MuiLoadingButton-loading MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButtonBase-root Mui-disabled css-6m3mwv-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+            className="MuiLoadingButton-root MuiLoadingButton-loading MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButtonBase-root Mui-disabled css-1pkfx9i-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
             disabled={true}
             id=":r0:"
             onBlur={[Function]}
@@ -117,8 +124,23 @@ exports[`shapshot for App component 1`] = `
             tabIndex={-1}
             type="button"
           >
+            <span
+              className="MuiLoadingButton-startIconLoadingStart MuiButton-startIcon MuiButton-iconSizeMedium css-1d6wzja-MuiButton-startIcon"
+            >
+              <svg
+                aria-hidden={true}
+                className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                data-testid="SaveIcon"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-10H5V5h10v4z"
+                />
+              </svg>
+            </span>
             <div
-              className="MuiLoadingButton-loadingIndicator MuiLoadingButton-loadingIndicatorCenter css-1yt7yx7-MuiLoadingButton-loadingIndicator"
+              className="MuiLoadingButton-loadingIndicator MuiLoadingButton-loadingIndicatorStart css-17xq7a1-MuiLoadingButton-loadingIndicator"
             >
               <span
                 aria-labelledby=":r0:"
@@ -147,7 +169,7 @@ exports[`shapshot for App component 1`] = `
                 </svg>
               </span>
             </div>
-            Loading
+            User Not Found
           </button>
         </ul>
       </div>

@@ -8,6 +8,20 @@ describe('Pagination element', () => {
 		expect(getByTestId('pagination')).toBeInTheDocument()
 	})
 
+
+
+	it('Renders Pagination element2', () => {
+		const { getByTestId } = render(<ListWrapper />)
+		const ulUsers = screen.getByTestId('userList')
+		fireEvent.change(ulUsers, { target: { totalPages: 1 } });
+
+		expect(screen.getByText(/User Not Found/i)).toBeInTheDocument()
+	})
+
+
+
+
+
 	// it('checking if onChange is working', () => {
 	//     // expect(getByTestId('pagination')).toBeInTheDocument()
 
@@ -25,6 +39,8 @@ describe('Pagination element', () => {
 
 	//     expect(handleChange).toHaveBeenCalled();
 	// })
+
+
 
 })
 

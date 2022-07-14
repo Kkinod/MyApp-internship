@@ -15,15 +15,15 @@ const SideBar = () => {
 
 		const shibeImg = () => {
 			ApiDefault(URL).then(res => {
-				setShibes(res.data)
+				setShibes(res.data[0])
 			})
-		}
 
-		if (null !== element) {
-			element.addEventListener('click', shibeImg)
+			if (null !== element) {
+				element.addEventListener('click', shibeImg)
 
-			return () => {
-				element.removeEventListener('click', shibeImg)
+				return () => {
+					element.removeEventListener('click', shibeImg)
+				}
 			}
 		}
 
@@ -32,11 +32,15 @@ const SideBar = () => {
 
 	return (
 		<div className='side-bar__container'>
-			<Typography gutterBottom variant='h5' component='div' color='white'>
-				{shibaTitle}
-			</Typography>
-			<Avatar alt='Remy Sharp' src={shibes} sx={{ width: 120, height: 120 }} className='avatar' />
-			<button ref={reff}>Get new shiba image</button>
+			<div className='side-bar'>
+				<Typography gutterBottom variant='h5' component='div' color='white'>
+					{shibaTitle}
+				</Typography>
+				<Avatar alt='Shiba img' src={shibes} sx={{ width: 120, height: 120 }} className='avatar' />
+				<button ref={reff} className='link'>
+					Get new shiba image
+				</button>
+			</div>
 		</div>
 	)
 }
