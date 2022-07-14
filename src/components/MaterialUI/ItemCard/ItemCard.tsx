@@ -1,7 +1,8 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { Avatar, Card, CardActions, CardContent, Typography } from '@mui/material'
-import { UsersContext } from '../../ListWrapper/ListWrapper'
+
+import { UsersContext } from '../../ListWrapper/UserList/UserList'
 
 const ItemCard = () => {
 	const { id, avatar, first_name, email } = useContext(UsersContext)

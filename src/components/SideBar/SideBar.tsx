@@ -36,7 +36,13 @@ const SideBar = () => {
 				<Typography gutterBottom variant='h5' component='div' color='white'>
 					{shibaTitle}
 				</Typography>
-				<Avatar alt='Shiba img' src={shibes} sx={{ width: 120, height: 120 }} className='avatar' />
+				<Avatar
+					alt='Shiba img'
+					src={shibes}
+					sx={{ width: 120, height: 120 }}
+					className='avatar'
+					data-testid='custom-element'
+				/>
 				<button ref={reff} className='link'>
 					Get new shiba image
 				</button>

@@ -1,10 +1,8 @@
-import React, { createContext, useEffect, useState, ChangeEvent } from 'react'
+import React, { useEffect, useState } from 'react'
 import Pagination from '@mui/material/Pagination'
-import SearchInput from '../MaterialUI/SearchInput/SearchInput'
-import ListItem from './ListItem/ListItem'
-import LoadingButton from '../LoadingButton/LoadingButton'
 import SideBar from '../SideBar/SideBar'
 import ApiDefault from '../../api/api'
+import UserList from './UserList/UserList'
 
 export interface IListItem {
 	id: number
@@ -14,12 +12,8 @@ export interface IListItem {
 	avatar: string
 }
 
-export const UsersContext = createContext<IListItem>({} as IListItem)
-
 const ListWrapper = () => {
-	const [searchContent, setSearchInputContent] = useState<string>('')
 	const [users, setUsers] = useState<IListItem[]>([])
-	const [usersFiltered, setUsersFiltered] = useState<IListItem[]>([])
 
 	const [totalPages, setPages] = useState(0)
 	const [page, setPage] = useState(1)
@@ -33,44 +27,13 @@ const ListWrapper = () => {
 		})
 	}, [page, URL])
 
-	const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
-		setSearchInputContent(e.target.value)
-	}
-
-	useEffect(() => {
-		setUsersFiltered(
-			users.filter(
-				user =>
-					user.first_name.toLowerCase().includes(searchContent.toLowerCase()) ||
-					user.email.toLowerCase().includes(searchContent.toLowerCase())
-			)
-		)
-	}, [searchContent, users])
-
 	return (
 		<div className='main'>
 			<SideBar />
 			<div className='wrapper'>
-				<SearchInput onChange={handleInputChange} />
-				<div className='users-list__container'>
-					<ul className='users-list' data-testid='userList'>
-						{totalPages >= 1 ? (
-							users.length ? (
-								usersFiltered.map(({ id, avatar, first_name, last_name, email }: IListItem) => {
-									return (
-										<UsersContext.Provider key={id} value={{ id, email, first_name, last_name, avatar }}>
-											<ListItem />
-										</UsersContext.Provider>
-									)
-								})
-							) : (
-								<LoadingButton />
-							)
-						) : (
-							<LoadingButton />
-						)}
-					</ul>
-				</div>
+				<ul className='users-list'>
+					<UserList users={users} />
+				</ul>
 				<Pagination count={totalPages} onChange={(e, page) => setPage(page)} data-testid='pagination' />
 			</div>
 		</div>

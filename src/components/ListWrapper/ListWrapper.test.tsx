@@ -10,13 +10,7 @@ describe('Pagination element', () => {
 
 
 
-	it('Renders Pagination element2', () => {
-		const { getByTestId } = render(<ListWrapper />)
-		const ulUsers = screen.getByTestId('userList')
-		fireEvent.change(ulUsers, { target: { totalPages: 1 } });
-
-		expect(screen.getByText(/User Not Found/i)).toBeInTheDocument()
-	})
+	
 
 
 

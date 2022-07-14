@@ -1,6 +1,7 @@
 import React, { ChangeEvent } from 'react'
 import { fireEvent, render, screen } from '@testing-library/react'
 import SearchInput from './SearchInput'
+import { MemoryRouter } from 'react-router-dom'
 
 describe('Input Search', () => {
 	it('Renders input element', () => {
@@ -18,3 +19,4 @@ describe('Input Search', () => {
 		expect(input.value).toEqual('Jane')
 	})
 })
+
