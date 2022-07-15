@@ -1,8 +1,7 @@
 import React from 'react'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import ListWrapper from './components/ListWrapper/ListWrapper'
 import Toolbar from './components/MaterialUI/Toolbar/Toolbar'
-
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import UsersDetails from './components/UsersDetails/UsersDetails'
 import PageNotFound from './components/PageNotFound/PageNotFound'
 

@@ -27,20 +27,28 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 }
 
-.wrapper-list {
+.wrapper {
 	display: flex;
-	margin: 1rem;
+	min-height: 92vh;
 	flex-direction: column;
 	align-items: center;
+	justify-content: space-between;
+	padding: 1rem;
+	width: 100%;
+}
+
+.main {
+	position: relative;
+	display: flex;
+	flex-direction: row;
 }
 
 .toolbar-container {
 	text-align: center;
 }
 
-.ulList {
+.users-list {
 	display: flex;
-	margin: 2rem;
 	justify-content: center;
 	flex-wrap: wrap;
 	list-style: none;
@@ -93,11 +101,8 @@ body {
 	background-color: var(--color-primary-dark);
 }
 
-.wrapper-users-details {
-	display: flex;
+.users-details {
 	padding: 1rem;
-	align-items: center;
-	flex-direction: column;
 }
 
 .btn-backLink {
@@ -105,6 +110,24 @@ body {
 	margin-top: 2rem;
 }
 
-.container-card {
+.users-details__card {
 	box-shadow: var(--box-shadow-primary);
+}
+
+.users-list__container {
+	display: flex;
+	margin: 1rem 0;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.container-all {
+	display: flex;
+	flex-direction: row;
+}
+
+.container-list {
+	display: flex;
+	flex-direction: row;
 }

@@ -1,0 +1,14 @@
+.side-bar__container {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	flex: 0 0 10%;
+	background-color: transparent;
+	box-shadow: var(--box-shadow-primary);
+}
+
+.side-bar__img {
+	display: block;
+	top: 0;
+}

@@ -3,6 +3,7 @@ import Pagination from '@mui/material/Pagination'
 import SearchInput from '../MaterialUI/SearchInput/SearchInput'
 import ListItem from './ListItem/ListItem'
 import LoadingButton from '../LoadingButton/LoadingButton'
+import SideBar from '../SideBar/SideBar'
 import ApiDefault from '../../api/api'
 
 export interface IListItem {
@@ -23,6 +24,7 @@ const ListWrapper = () => {
 	const [totalPages, setPages] = useState(0)
 	const [page, setPage] = useState(1)
 	const URL = `https://reqres.in/api/users?page=${page}`
+	const minTotalPages = 1
 
 	useEffect(() => {
 		ApiDefault(URL).then(res => {
@@ -47,26 +49,31 @@ const ListWrapper = () => {
 	}, [searchContent, users])
 
 	return (
-		<div className='wrapper-list'>
-			<SearchInput onChange={handleInputChange} />
-			<ul className='ulList'>
-				{totalPages >= 1 ? (
-					users.length ? (
-						usersFiltered.map(({ id, avatar, first_name, last_name, email }: IListItem) => {
-							return (
-								<UsersContext.Provider key={id} value={{ id, email, first_name, last_name, avatar }}>
-									<ListItem />
-								</UsersContext.Provider>
+		<div className='main'>
+			<SideBar />
+			<div className='wrapper'>
+				<SearchInput onChange={handleInputChange} />
+				<div className='users-list__container'>
+					<ul className='users-list'>
+						{totalPages >= minTotalPages ? (
+							users.length ? (
+								usersFiltered.map(({ id, avatar, first_name, last_name, email }: IListItem) => {
+									return (
+										<UsersContext.Provider key={id} value={{ id, email, first_name, last_name, avatar }}>
+											<ListItem />
+										</UsersContext.Provider>
+									)
+								})
+							) : (
+								<LoadingButton />
 							)
-						})
-					) : (
-						<LoadingButton />
-					)
-				) : (
-					<LoadingButton />
-				)}
-			</ul>
-			<Pagination count={totalPages} onChange={(e, page) => setPage(page)}></Pagination>
+						) : (
+							<LoadingButton />
+						)}
+					</ul>
+				</div>
+				<Pagination count={totalPages} onChange={(e, page) => setPage(page)}></Pagination>
+			</div>
 		</div>
 	)
 }

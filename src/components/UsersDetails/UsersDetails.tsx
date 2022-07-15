@@ -17,9 +17,9 @@ const UsersDetails = () => {
 	}, [params, URL])
 
 	return (
-		<div className='wrapper-users-details'>
+		<div className='wrapper users-details'>
 			{user && (
-				<div className='container-card'>
+				<div className='users-details__card'>
 					<Card sx={{ maxWidth: 350 }} className='card'>
 						<CardMedia component='img' alt='User img' height='250' image={user.avatar} />
 						<CardContent>
