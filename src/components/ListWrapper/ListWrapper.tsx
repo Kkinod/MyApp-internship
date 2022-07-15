@@ -34,6 +34,9 @@ const ListWrapper = () => {
 				<ul className='users-list'>
 					<UserList users={users} />
 				</ul>
+				{/* {totalPages ? (
+					<Pagination count={totalPages} onChange={(e, page) => setPage(page)} data-testid='pagination' />
+				) : undefined} */}
 				<Pagination count={totalPages} onChange={(e, page) => setPage(page)} data-testid='pagination' />
 			</div>
 		</div>

@@ -1,6 +1,7 @@
 import React, { ChangeEvent } from 'react'
 import { fireEvent, render, screen } from '@testing-library/react'
 import ListWrapper from './ListWrapper'
+import renderer from 'react-test-renderer'
 
 describe('Pagination element', () => {
 	it('Renders Pagination element', () => {
@@ -8,13 +9,10 @@ describe('Pagination element', () => {
 		expect(getByTestId('pagination')).toBeInTheDocument()
 	})
 
-
-
-	
-
-
-
-
+	it('shapshot for Pagination', () => {
+		const renderedComponent = renderer.create(<ListWrapper />).toJSON()
+		expect(renderedComponent).toMatchSnapshot()
+	})
 
 	// it('checking if onChange is working', () => {
 	//     // expect(getByTestId('pagination')).toBeInTheDocument()
@@ -33,9 +31,4 @@ describe('Pagination element', () => {
 
 	//     expect(handleChange).toHaveBeenCalled();
 	// })
-
-
-
 })
-
-
