@@ -17,6 +17,7 @@ const ListWrapper = () => {
 	const [totalPages, setPages] = useState(0)
 	const [page, setPage] = useState(1)
 	const URL = `https://reqres.in/api/users?page=${page}`
+	const minTotalPages = 1
 
 	useEffect(() => {
 		ApiDefault(URL).then(res => {
