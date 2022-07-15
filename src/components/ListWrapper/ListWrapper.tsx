@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import Pagination from '@mui/material/Pagination'
 import SideBar from '../SideBar/SideBar'
 import ApiDefault from '../../api/api'
 import UserList from './UserList/UserList'
+import Paginationn from './Pagination/Paginationn'
 
 export interface IListItem {
 	id: number
@@ -14,7 +14,6 @@ export interface IListItem {
 
 const ListWrapper = () => {
 	const [users, setUsers] = useState<IListItem[]>([])
-
 	const [totalPages, setPages] = useState(0)
 	const [page, setPage] = useState(1)
 	const URL = `https://reqres.in/api/users?page=${page}`
@@ -34,10 +33,7 @@ const ListWrapper = () => {
 				<ul className='users-list'>
 					<UserList users={users} />
 				</ul>
-				{/* {totalPages ? (
-					<Pagination count={totalPages} onChange={(e, page) => setPage(page)} data-testid='pagination' />
-				) : undefined} */}
-				<Pagination count={totalPages} onChange={(e, page) => setPage(page)} data-testid='pagination' />
+				<Paginationn totalPages={totalPages} setPage={setPage} />
 			</div>
 		</div>
 	)

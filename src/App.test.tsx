@@ -4,17 +4,15 @@ import renderer from 'react-test-renderer'
 import { MemoryRouter } from 'react-router-dom'
 import App from './App'
 
-describe('Shapshot test', () => {
-	it('shapshot for App component', () => {
-		const renderedComponent = renderer
-			.create(
-				<MemoryRouter initialEntries={['/']}>
-					<App />
-				</MemoryRouter>
-			)
-			.toJSON()
-		expect(renderedComponent).toMatchSnapshot()
-	})
+it('Shapshot for App component', () => {
+	const renderedComponent = renderer
+		.create(
+			<MemoryRouter initialEntries={['/']}>
+				<App />
+			</MemoryRouter>
+		)
+		.toJSON()
+	expect(renderedComponent).toMatchSnapshot()
 })
 
 it('Testing "Page not found"', () => {
