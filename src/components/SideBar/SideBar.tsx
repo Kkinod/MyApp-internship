@@ -8,6 +8,7 @@ const SideBar = () => {
 	const reff = useRef<HTMLButtonElement>(null)
 
 	const shibaTitle = 'Give a smile to shiba!'
+	const shibaChangeBtn = 'Get new shiba image'
 
 	useEffect(() => {
 		const URL = 'http://shibe.online/api/shibes?count=1&urls=true&httpsUrls=true'
@@ -38,7 +39,7 @@ const SideBar = () => {
 				</Typography>
 				<Avatar alt='Shiba img' src={shibes} sx={{ width: 120, height: 120 }} className='avatar' data-testid='avatar' />
 				<button ref={reff} className='link'>
-					Get new shiba image
+					{shibaChangeBtn}
 				</button>
 			</div>
 		</div>

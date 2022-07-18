@@ -182,7 +182,7 @@ exports[`Shapshot for App component 1`] = `
       >
         <div
           aria-hidden="true"
-          role="OnePage"
+          data-testid="custom-element"
         />
       </div>
     </div>
