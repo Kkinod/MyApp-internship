@@ -21,6 +21,15 @@ const FormMsg = ({ name }: { name: string }) => {
 		.min(minCharacters, `Must be ${minCharacters} characters or more`)
 		.max(maxCharacters, `Must be ${maxCharacters} characters or less`)
 		.required('Required')
+	interface abc {
+		title: string
+		message: string
+	}
+
+	const handleSubmit = async (values: abc, { setSubmitting }: { setSubmitting: (isSubmitting: boolean) => void }) => {
+		await new Promise(r => setTimeout(r, 500))
+		setSubmitting(false)
+	}
 
 	return (
 		<>
@@ -37,10 +46,7 @@ const FormMsg = ({ name }: { name: string }) => {
 					title: validationTitle,
 					message: validationMessage,
 				})}
-				onSubmit={async (values, { setSubmitting }) => {
-					await new Promise(r => setTimeout(r, 500))
-					setSubmitting(false)
-				}}>
+				onSubmit={handleSubmit}>
 				<Form className='form'>
 					<div className='form__wrapper'>
 						<CustomTextInput
